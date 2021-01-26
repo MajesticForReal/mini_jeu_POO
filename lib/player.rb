@@ -20,9 +20,9 @@ class Player
 
 	def attack(player_attacked)
 		puts "Le joueur #{@name} attaque le joueur #{player_attacked.name} !"
-		@damage =	player_attacked.compute_damage
-		puts "Il lui inflige #{@damage} points de dommages !"
-		player_attacked.gets_damage(@damage)
+		damage = compute_damage
+		puts "Il lui inflige #{damage} points de dommages !"
+		player_attacked.gets_damage(damage)
 	end
 
 	def compute_damage
@@ -50,10 +50,10 @@ class HumanPlayer < Player
 	end
 
 	def search_weapon
-		@new_weapon = rand(1..6)
-		puts "Tu as trouve une arme de niveau #{@new_weapon} !"
-		if @weapon_level < @new_weapon
-			@weapon_level = @new_weapon
+		new_weapon = rand(1..6)
+		puts "Tu as trouve une arme de niveau #{new_weapon} !"
+		if @weapon_level < new_weapon
+			@weapon_level = new_weapon
 			puts "Youhou ! Elle est meilleure que ton arme actuelle : Tu la prends."
 		else puts "M@*#$... Elle n'est pas mieux que ton arme actuelle.."
 		end

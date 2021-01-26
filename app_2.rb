@@ -89,8 +89,6 @@ while p1.life_points > 0 && (p2.life_points > 0 || p3.life_points > 0)
 			end
 			end
 
-
-	
 	puts "Les autres joueurs t'attaquent !"
 	puts "\n"
 
@@ -104,10 +102,13 @@ while p1.life_points > 0 && (p2.life_points > 0 || p3.life_points > 0)
 			puts "\n"
 		end
 	end
+	if p2.life_points <= 0 && p3.life_points <= 0
+		puts "Mais ils sont tous morts !"
+		next
+	end
 	if p1.life_points <= 0
 		next
 	end
-
 
 	puts "Continue ? [y/n]"
 	print "> "
